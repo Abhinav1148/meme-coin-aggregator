@@ -1,0 +1,203 @@
+{
+  "info": {
+    "name": "Meme Coin Aggregator API",
+    "description": "API collection for the Real-time Meme Coin Data Aggregation Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/health",
+          "host": ["{{base_url}}"],
+          "path": ["api", "health"]
+        }
+      }
+    },
+    {
+      "name": "Get All Tokens",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/tokens",
+          "host": ["{{base_url}}"],
+          "path": ["api", "tokens"]
+        }
+      }
+    },
+    {
+      "name": "Get Tokens with Pagination",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/tokens?limit=10&cursor=0",
+          "host": ["{{base_url}}"],
+          "path": ["api", "tokens"],
+          "query": [
+            {
+              "key": "limit",
+              "value": "10"
+            },
+            {
+              "key": "cursor",
+              "value": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Tokens Sorted by Volume",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/tokens?sortBy=volume&order=desc",
+          "host": ["{{base_url}}"],
+          "path": ["api", "tokens"],
+          "query": [
+            {
+              "key": "sortBy",
+              "value": "volume"
+            },
+            {
+              "key": "order",
+              "value": "desc"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Tokens Filtered by Time Period",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/tokens?timePeriod=24h",
+          "host": ["{{base_url}}"],
+          "path": ["api", "tokens"],
+          "query": [
+            {
+              "key": "timePeriod",
+              "value": "24h"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Tokens with Multiple Filters",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/tokens?minVolume=1000&minLiquidity=500&protocol=Raydium",
+          "host": ["{{base_url}}"],
+          "path": ["api", "tokens"],
+          "query": [
+            {
+              "key": "minVolume",
+              "value": "1000"
+            },
+            {
+              "key": "minLiquidity",
+              "value": "500"
+            },
+            {
+              "key": "protocol",
+              "value": "Raydium"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Search Tokens",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/tokens/search?q=SOL",
+          "host": ["{{base_url}}"],
+          "path": ["api", "tokens", "search"],
+          "query": [
+            {
+              "key": "q",
+              "value": "SOL"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Token by Address",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/tokens/576P1t7XsRL4ZVj38LV2eYWxXRPguBADA8BxcNz1xo8y",
+          "host": ["{{base_url}}"],
+          "path": ["api", "tokens", "576P1t7XsRL4ZVj38LV2eYWxXRPguBADA8BxcNz1xo8y"]
+        }
+      }
+    },
+    {
+      "name": "Get Tokens Sorted by Price Change",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/tokens?sortBy=price_change&order=desc",
+          "host": ["{{base_url}}"],
+          "path": ["api", "tokens"],
+          "query": [
+            {
+              "key": "sortBy",
+              "value": "price_change"
+            },
+            {
+              "key": "order",
+              "value": "desc"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Tokens Sorted by Market Cap",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/tokens?sortBy=market_cap&order=desc",
+          "host": ["{{base_url}}"],
+          "path": ["api", "tokens"],
+          "query": [
+            {
+              "key": "sortBy",
+              "value": "market_cap"
+            },
+            {
+              "key": "order",
+              "value": "desc"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}
+
